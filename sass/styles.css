@@ -1,0 +1,289 @@
+/*Funciones*/
+/*Mixin*/
+/*Plantillas*/
+.info-container, .socials-container {
+  background: rgb(100, 89, 89);
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.portfolio, .curriculum, .sobreMi {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.formaciones .formacion-socorrista, .formaciones .formacion-chivato, .formaciones .formacion-espartano, .formaciones .formacion-pistolero {
+  background: #808080;
+  padding: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(69, 67, 67);
+  box-shadow: 6px 5px 0px rgb(69, 67, 67);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.formaciones .formacion-socorrista img, .formaciones .formacion-chivato img, .formaciones .formacion-espartano img, .formaciones .formacion-pistolero img {
+  width: 50%;
+  height: 50%;
+}
+.formaciones .formacion-socorrista div:nth-child(2), .formaciones .formacion-chivato div:nth-child(2), .formaciones .formacion-espartano div:nth-child(2), .formaciones .formacion-pistolero div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Variables*/
+/*Llamadas Mixin*/
+/*Nesting y Estilos*/
+body {
+  background: rgb(195, 223, 17);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  height: 90vh;
+}
+
+.socials-container {
+  width: 20%;
+}
+
+.socials-content {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.basic-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.basic-info img {
+  width: 50%;
+  position: relative;
+}
+.basic-info hr {
+  width: 75%;
+  height: 2px;
+  background: white;
+}
+.basic-info p {
+  color: white;
+}
+.basic-info div {
+  position: absolute;
+  z-index: 0;
+  background: rgb(225, 221, 221);
+  width: 10%;
+  height: 18.5%;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.socials div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.socials div div {
+  background: rgb(189, 189, 189);
+  min-width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(69, 67, 67);
+  border-radius: 10px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  box-shadow: 6px 5px 0px rgb(69, 67, 67);
+}
+.socials span {
+  font-size: small;
+  font-weight: bold;
+}
+
+.info-container {
+  overflow: scroll;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.top-bar h1 {
+  margin-left: 200px;
+  align-self: center;
+  font-size: 40px;
+}
+.top-bar nav {
+  background: gray;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.top-bar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.top-bar li {
+  list-style: none;
+}
+.top-bar a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.sobreMi a {
+  font-size: 40px;
+  text-align: center;
+}
+
+.formaciones {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "formacion-pistolero formacion-espartano" "formacion-chivato formacion-socorrista";
+}
+.formaciones .formacion-pistolero {
+  grid-area: formacion-pistolero;
+  transition: all 1s ease;
+}
+.formaciones .formacion-pistolero h2 {
+  color: white;
+}
+.formaciones .formacion-pistolero div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: url("../images/pistolero.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+}
+.formaciones .formacion-pistolero div:nth-child(1):hover {
+  background: url("../images/pistolero2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.formaciones .formacion-pistolero:hover {
+  background: white;
+}
+.formaciones .formacion-pistolero:hover h2 {
+  color: black;
+}
+.formaciones .formacion-espartano {
+  grid-area: formacion-espartano;
+  transition: all 1s ease;
+}
+.formaciones .formacion-espartano h2 {
+  color: white;
+}
+.formaciones .formacion-espartano div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: url("../images/espartano.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+}
+.formaciones .formacion-espartano div:nth-child(1):hover {
+  background: url("../images/espartano2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.formaciones .formacion-espartano:hover {
+  background: white;
+}
+.formaciones .formacion-espartano:hover h2 {
+  color: black;
+}
+.formaciones .formacion-chivato {
+  grid-area: formacion-chivato;
+  transition: all 1s ease;
+}
+.formaciones .formacion-chivato h2 {
+  color: white;
+}
+.formaciones .formacion-chivato div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: url("../images/chivato.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+}
+.formaciones .formacion-chivato div:nth-child(1):hover {
+  background: url("../images/chivato2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.formaciones .formacion-chivato:hover {
+  background: white;
+}
+.formaciones .formacion-chivato:hover h2 {
+  color: black;
+}
+.formaciones .formacion-socorrista {
+  grid-area: formacion-socorrista;
+  transition: all 1s ease;
+}
+.formaciones .formacion-socorrista h2 {
+  color: white;
+}
+.formaciones .formacion-socorrista div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: url("../images/socorrista.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+}
+.formaciones .formacion-socorrista div:nth-child(1):hover {
+  background: url("../images/socorrista2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.formaciones .formacion-socorrista:hover {
+  background: white;
+}
+.formaciones .formacion-socorrista:hover h2 {
+  color: black;
+}/*# sourceMappingURL=styles.css.map */
