@@ -69,10 +69,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.basic-info img {
-  width: 50%;
-  position: relative;
-}
 .basic-info hr {
   width: 75%;
   height: 2px;
@@ -80,13 +76,6 @@ body {
 }
 .basic-info p {
   color: white;
-}
-.basic-info div {
-  position: absolute;
-  z-index: 0;
-  background: rgb(225, 221, 221);
-  width: 10%;
-  height: 18.5%;
 }
 
 .socials {
@@ -133,6 +122,7 @@ body {
 }
 .top-bar h1 {
   margin-left: 200px;
+  animation: shake 0.2s linear infinite alternate;
   align-self: center;
   font-size: 40px;
 }
@@ -286,4 +276,317 @@ body {
 }
 .formaciones .formacion-socorrista:hover h2 {
   color: black;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  perspective: 500px;
+}
+.image div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  background: gray;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  transition: transform 1s ease;
+}
+.image .icon {
+  background: url("/images/churumbel-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+  bottom: 100%;
+  width: 100%;
+  height: 100px;
+  transition: all 0.5s ease;
+}
+.image:hover div:nth-child(1) {
+  transform: rotate3d(3, 0, 0, 80deg);
+  transform-style: preserve-3d;
+}
+.image:hover .icon {
+  scale: 1.5;
+  transform: translateY(-50px);
+}
+
+.curriculum {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+.experiencia-1 {
+  padding-left: 200px;
+  display: flex;
+  gap: 300px;
+  width: 100%;
+}
+.experiencia-1 .eje {
+  position: relative;
+  display: flex;
+  z-index: 0;
+  width: 100px;
+  align-items: center;
+}
+.experiencia-1 .eje .fondo {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+  scale: 0;
+  background: red;
+  transition: scale 0.5s ease;
+}
+.experiencia-1 .eje .circle {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  background: blue;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.experiencia-1 .eje:hover .fondo {
+  scale: 105%;
+}
+.experiencia-1 .eje:hover ~ div h1 {
+  letter-spacing: 5px;
+}
+.experiencia-1 .eje:hover ~ div p {
+  background: gray;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+.experiencia-1 .contenido {
+  position: relative;
+  z-index: 2;
+}
+.experiencia-1 p {
+  transition: all 1s ease;
+  position: absolute;
+  z-index: 2;
+}
+.experiencia-1 hr {
+  position: relative;
+  background: white;
+  top: 100px;
+  width: 3px;
+  height: 100px;
+}
+
+.experiencia-2 {
+  padding-left: 200px;
+  display: flex;
+  gap: 300px;
+  width: 100%;
+}
+.experiencia-2 .eje {
+  position: relative;
+  display: flex;
+  z-index: 0;
+  width: 100px;
+  align-items: center;
+}
+.experiencia-2 .eje .fondo {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+  scale: 0;
+  background: red;
+  transition: scale 0.5s ease;
+}
+.experiencia-2 .eje .circle {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  background: blue;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.experiencia-2 .eje:hover .fondo {
+  scale: 105%;
+}
+.experiencia-2 .eje:hover ~ div h1 {
+  letter-spacing: 5px;
+}
+.experiencia-2 .eje:hover ~ div p {
+  background: gray;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+.experiencia-2 .contenido {
+  position: relative;
+  z-index: 2;
+}
+.experiencia-2 p {
+  transition: all 1s ease;
+  position: absolute;
+  z-index: 2;
+}
+.experiencia-2 hr {
+  position: relative;
+  background: white;
+  top: 100px;
+  width: 3px;
+  height: 100px;
+}
+
+.experiencia-3 {
+  padding-left: 200px;
+  display: flex;
+  gap: 300px;
+  width: 100%;
+}
+.experiencia-3 .eje {
+  position: relative;
+  display: flex;
+  z-index: 0;
+  width: 100px;
+  align-items: center;
+}
+.experiencia-3 .eje .fondo {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+  scale: 0;
+  background: red;
+  transition: scale 0.5s ease;
+}
+.experiencia-3 .eje .circle {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  background: blue;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.experiencia-3 .eje:hover .fondo {
+  scale: 105%;
+}
+.experiencia-3 .eje:hover ~ div h1 {
+  letter-spacing: 5px;
+}
+.experiencia-3 .eje:hover ~ div p {
+  background: gray;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+.experiencia-3 .contenido {
+  position: relative;
+  z-index: 2;
+}
+.experiencia-3 p {
+  transition: all 1s ease;
+  position: absolute;
+  z-index: 2;
+}
+.experiencia-3 hr {
+  position: relative;
+  background: white;
+  top: 100px;
+  width: 3px;
+  height: 100px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.img-1 {
+  background: url("/images/portfolio/1.PNG");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  flex-grow: 1;
+  transition: width 1s ease-in-out;
+}
+.img-1:hover {
+  width: 500px;
+  height: 400px;
+}
+
+.img-2 {
+  background: url("/images/portfolio/2.PNG");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  flex-grow: 1;
+  transition: width 1s ease-in-out;
+}
+.img-2:hover {
+  width: 500px;
+  height: 400px;
+}
+
+.img-3 {
+  background: url("/images/portfolio/3.PNG");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  flex-grow: 1;
+  transition: width 1s ease-in-out;
+}
+.img-3:hover {
+  width: 500px;
+  height: 400px;
+}
+
+.img-4 {
+  background: url("/images/portfolio/4.PNG");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  flex-grow: 1;
+  transition: width 1s ease-in-out;
+}
+.img-4:hover {
+  width: 500px;
+  height: 400px;
+}
+
+.img-5 {
+  background: url("/images/portfolio/5.PNG");
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  flex-grow: 1;
+  transition: width 1s ease-in-out;
+}
+.img-5:hover {
+  width: 500px;
+  height: 400px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }/*# sourceMappingURL=styles.css.map */

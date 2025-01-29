@@ -103,10 +103,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  img {
-    width: 50%;
-    position: relative;
-  }
   hr {
     width: 75%;
     height: 2px;
@@ -114,13 +110,6 @@ body {
   }
   p {
     color: white;
-  }
-  div {
-    position: absolute;
-    z-index: 0;
-    background: rgb(225, 221, 221);
-    width: 10%;
-    height: 18.5%;
   }
 }
 .socials {
@@ -172,6 +161,7 @@ body {
   justify-content: space-between;
   h1 {
     margin-left: 200px;
+    animation: shake 0.2s linear infinite alternate;
     align-self: center;
     font: {
       size: 40px;
@@ -237,4 +227,155 @@ body {
 }
 .portfolio {
   @extend %info;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  perspective: 500px;
+
+  div:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    background: gray;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+
+    transition: transform 1s ease;
+  }
+
+  .icon {
+    background: url("/images/churumbel-icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; // Cambiado de relative a absolute
+    z-index: 2;
+    bottom: 100%;
+    width: 100%;
+    height: 100px;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    div:nth-child(1) {
+      transform: rotate3d(3, 0, 0, 80deg);
+      transform-style: preserve-3d;
+    }
+
+    .icon {
+      scale: 1.5;
+      transform: translateY(-50px);
+    }
+  }
+}
+.curriculum {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+@mixin experiencias {
+  @for $i from 1 through 3 {
+    .experiencia-#{$i} {
+      padding-left: 200px;
+      display: flex;
+      gap: 300px;
+      width: 100%;
+      .eje {
+        position: relative;
+        display: flex;
+        z-index: 0;
+        width: 100px;
+        align-items: center;
+        .fondo {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100px;
+          border-radius: 100%;
+          scale: 0;
+          background: red;
+          transition: scale 0.5s ease;
+        }
+        .circle {
+          position: absolute;
+          z-index: 2;
+          left: 25%;
+          width: 50px;
+          height: 50px;
+          background: blue;
+          border-radius: 100%;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .fondo {
+            scale: 105%;
+          }
+          & ~ div h1 {
+            letter-spacing: 5px;
+          }
+          & ~ div p {
+            background: gray;
+            padding-top: 100px;
+            padding-left: 100px;
+          }
+        }
+      }
+      .contenido {
+        position: relative;
+        z-index: 2;
+      }
+      p {
+        transition: all 1s ease;
+        position: absolute;
+        z-index: 2;
+      }
+      hr {
+        position: relative;
+
+        background: white;
+        top: 100px;
+        width: 3px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+@include experiencias();
+@mixin portfolio() {
+  .images {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  @for $i from 1 through 5 {
+    .img-#{$i} {
+      background: url("/images/portfolio/#{$i}.PNG");
+      background-size: auto;
+      background-repeat: no-repeat;
+      width: 300px;
+      height: 400px;
+      flex-grow: 1;
+      transition: width 1s ease-in-out;
+      &:hover {
+        width: 500px;
+        height: 400px;
+      }
+    }
+  }
+}
+@include portfolio();
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
