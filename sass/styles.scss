@@ -1,4 +1,7 @@
 /*Funciones*/
+@function cambiarColor($color){
+  @return mix($color, red);
+}
 /*Mixin*/
 @mixin formaciones($listaformaciones) {
   //transformacion con 2 transiciones
@@ -199,8 +202,8 @@ body {
   align-items: center;
   hr {
     width: 75%;
-    height: 2px;
-    background: white;
+    height: 5px;
+    animation: cambiarbarra 2s ease-in-out infinite;
   }
   p {
     color: white;
@@ -295,11 +298,16 @@ body {
 .sobreMi {
   @extend %info;
   a {
+    transition: scale 2s ease-in-out;
+
     font: {
       size: 40px;
     }
     text: {
       align: center;
+    }
+    &:hover{
+      scale: 110%;
     }
   }
 }
@@ -380,4 +388,13 @@ body {
   100% {
     transform: translate(0px, 0px);
   }
+}
+@keyframes cambiarbarra{
+0%{
+  background: white;
+} 50%{
+  background: cambiarColor(white);
+}100%{
+  background: white;
+}
 }
