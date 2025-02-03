@@ -168,7 +168,7 @@
 /*Variables*/
 $widthSocials: 20%;
 $widthContainer: 80%;
-
+$color: rgb(195, 223, 17);
 /*Llamadas Mixin*/
 
 @include experiencias();
@@ -176,7 +176,7 @@ $widthContainer: 80%;
 @include portfolio();
 /*Nesting y Estilos*/
 body {
-  background: rgb(195, 223, 17);
+  background: $color;
 }
 .container {
   display: flex;
@@ -251,6 +251,9 @@ body {
 
   display: flex;
   flex-direction: column;
+}
+#title{
+ text-shadow: 1px 5px 10px $color;
 }
 .top-bar {
   display: flex;

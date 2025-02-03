@@ -374,6 +374,10 @@ body {
   flex-direction: column;
 }
 
+#title {
+  text-shadow: 1px 5px 10px rgb(195, 223, 17);
+}
+
 .top-bar {
   display: flex;
   width: 100%;
