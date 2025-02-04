@@ -75,6 +75,7 @@
 }
 .experiencia-1 .contenido {
   position: relative;
+  width: 50%;
   z-index: 2;
 }
 .experiencia-1 p {
@@ -126,6 +127,7 @@
 }
 .experiencia-2 .contenido {
   position: relative;
+  width: 50%;
   z-index: 2;
 }
 .experiencia-2 p {
@@ -177,6 +179,7 @@
 }
 .experiencia-3 .contenido {
   position: relative;
+  width: 50%;
   z-index: 2;
 }
 .experiencia-3 p {
