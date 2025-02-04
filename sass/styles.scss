@@ -54,7 +54,7 @@
       transition: width 1s ease-in-out;
       &:hover {
         width: 500px;
-        height: 400px;
+        flex-grow: 5;
       }
     }
   }

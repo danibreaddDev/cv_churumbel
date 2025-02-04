@@ -212,7 +212,7 @@
 }
 .img-1:hover {
   width: 500px;
-  height: 400px;
+  flex-grow: 5;
 }
 
 .img-2 {
@@ -226,7 +226,7 @@
 }
 .img-2:hover {
   width: 500px;
-  height: 400px;
+  flex-grow: 5;
 }
 
 .img-3 {
@@ -240,7 +240,7 @@
 }
 .img-3:hover {
   width: 500px;
-  height: 400px;
+  flex-grow: 5;
 }
 
 .img-4 {
@@ -254,7 +254,7 @@
 }
 .img-4:hover {
   width: 500px;
-  height: 400px;
+  flex-grow: 5;
 }
 
 .img-5 {
@@ -268,7 +268,7 @@
 }
 .img-5:hover {
   width: 500px;
-  height: 400px;
+  flex-grow: 5;
 }
 
 /*Nesting y Estilos*/
